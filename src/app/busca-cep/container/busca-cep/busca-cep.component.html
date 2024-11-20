@@ -1,0 +1,33 @@
+<h2>
+  {{ titulo() }}
+</h2>
+
+<form [formGroup]="form" class="form">
+
+  <label for="cep" class="form__label">
+  <span class="material-icons">search</span></label>
+  <input
+    cepMask
+    name="cep"
+    id="cep"
+    type="text"
+    maxlength="9"
+    placeholder="Busque o CEP..."
+    class="form__input"
+    formControlName="cep"
+    (ngModelChange)="cep.set($event)"/>
+  
+  <button type="submit" class="btn-submit">Buscar</button>
+
+</form>
+
+<br> 
+
+<pre>{{ buscarCep$() | async | json }}</pre>
+
+<br> 
+
+<footer>
+  <span class="material-icons">code</span>
+  <a href="https://github.com/JoaoLucasDomingos" target="_blank"> Developed by João Lucas</a>
+</footer>
